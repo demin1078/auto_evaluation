@@ -1,0 +1,9 @@
+{
+    "version": 2,
+    "builds": [
+        {"src": "auto_evalution/wsgi.py", "use": "@vercel/python"}
+    ],
+    "routes": [
+        {"src": "/(.*)", "dest": "auto_evalution/wsgi.py"}
+    ]
+}
