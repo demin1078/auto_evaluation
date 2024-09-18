@@ -1,0 +1,31 @@
+{% extends 'evaluate/base.html' %}
+{% load static %}
+
+{% block title %}Evaluate Car{% endblock %}
+
+{% block content %}
+<h1>Evaluate Car</h1>
+<div class="container">
+    <div class="car-image">
+        <img src="{% static 'evaluate/car_image.jpg' %}" alt="Car Image">
+    </div>
+    <div class="car-details">
+        <ul>
+            {% for key, value in car_characteristics.items %}
+                <li><strong>{{ key }}:</strong> {{ value }}</li>
+            {% endfor %}
+        </ul>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Estimate Car</button>
+        </form>
+        <p><strong>Estimated Car Price:</strong> {{ estimated_price }}</p>
+    </div>
+</div>
+<div class="car-description">
+    <p>
+        This is a long description of the car. It includes details about the car's history, performance,
+        features, and anything else that might be relevant to someone looking to evaluate this car.
+    </p>
+</div>
+{% endblock %}
