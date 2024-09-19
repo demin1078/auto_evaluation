@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret! # django-insecure-uvhk91j@t(m7i$gj$qvo0uy42hcs7dx7ncsdatwq7ov7(0-_i0
+# SECURITY WARNING: keep the secret key used in production secret! #   django-insecure-uvhk91j@t(m7i$gj$qvo0uy42hcs7dx7ncsdatwq7ov7(0-_i0
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -83,7 +83,8 @@ DATABASES = {
     }
 }
 
-DATABASES["default"] = dj_database_url.parse("postgresql://car_char_user:yFbMNiK8p8GQjDvSNiH3jEs6auvFuBmB@dpg-crlgapaj1k6c73fssnag-a.oregon-postgres.render.com/car_char")
+DATABASES["default"] = dj_database_url.parse(os.environ.get("DB_URL"))
+#dj_database_url.parse("postgresql://car_char_user:yFbMNiK8p8GQjDvSNiH3jEs6auvFuBmB@dpg-crlgapaj1k6c73fssnag-a.oregon-postgres.render.com/car_char")
 
 
 # Password validation
