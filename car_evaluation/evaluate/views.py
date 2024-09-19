@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import TodoItem
+from .models import TodoItem, Cars
 import random
 
 def evaluate_car(request):
@@ -19,7 +19,8 @@ def evaluate_car(request):
     })
 
 def database(request):
-    return render(request, 'evaluate/database.html')
+    cars = Cars.objects.all()
+    return render(request, 'evaluate/database.html',  {'cars': cars})
 
 def about(request):
     return render(request, 'evaluate/about.html')

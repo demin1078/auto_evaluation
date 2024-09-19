@@ -5,4 +5,16 @@
 {% block content %}
 <h1>Database</h1>
 <p>Here you can find a database of all evaluated cars.</p>
+<div class="card-container">
+    {% for car in cars %}
+        <div class="card">
+            <img src="{{ car.photo_url }}" alt="{{ car.car_name }}">
+            <div class="card-content">
+                <h2>{{ car.title }}</h2>
+                <p><strong>Car Name:</strong> {{ car.car_name }}</p>
+                <p><strong>Price:</strong> ${{ car.price }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
 {% endblock %}
