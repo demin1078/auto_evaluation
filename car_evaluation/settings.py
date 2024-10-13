@@ -85,7 +85,7 @@ DATABASES = {
     }
 }
 
-DATABASES["default"] = dj_database_url.parse(os.environ.get("DB_URL"))
+DATABASES["default"] = dj_database_url.parse(os.environ.get("DB_URL", "postgresql://car_char_user:yFbMNiK8p8GQjDvSNiH3jEs6auvFuBmB@dpg-crlgapaj1k6c73fssnag-a.oregon-postgres.render.com/car_char"))
 #dj_database_url.parse("postgresql://car_char_user:yFbMNiK8p8GQjDvSNiH3jEs6auvFuBmB@dpg-crlgapaj1k6c73fssnag-a.oregon-postgres.render.com/car_char")
 
 
