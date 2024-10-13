@@ -3,6 +3,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!--LiveInternet counter-->
+    <script>
+        new Image().src = "https://counter.yadro.ru/hit?r"+
+        escape(document.referrer)+((typeof(screen)=="undefined")?"":
+        ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+        screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+        ";h"+escape(document.title.substring(0,150))+
+        ";"+Math.random();</script><!--/LiveInternet-->
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -19,6 +28,7 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/98466731" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
+
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,5 +48,14 @@
     <main>
         {% block content %}{% endblock %}
     </main>
+
+<!--LiveInternet logo-->
+<a href="https://www.liveinternet.ru/click"
+target="_blank"><img src="https://counter.yadro.ru/logo?27.6"
+title="LiveInternet: показано количество просмотров и посетителей"
+alt="" style="border:0" width="88" height="120"/></a>
+<!--/LiveInternet-->
+
 </body>
+
 </html>
