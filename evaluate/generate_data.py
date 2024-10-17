@@ -5,7 +5,7 @@ import numpy as np
 months = ['January', 'February', 'March', 'April', 'May', 'June']
 sales = [120, 150, 100, 170, 200, 180]
 
-brands = ['Brand A', 'Brand B', 'Brand C', 'Brand D']
+brands = ['Хавалы', 'Фрицы', 'Пендосия', 'Буханочка']
 sales_by_brand = [300, 200, 150, 350]
 
 # График ежемесячных продаж
