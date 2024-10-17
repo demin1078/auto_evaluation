@@ -57,3 +57,17 @@ def market_changes(request):
     }
 
     return render(request, 'evaluate/market_changes.html', context)
+
+def statistics_view(request):
+    total_sales = 1000  # Пример данных
+    average_price = Cars.objects.aggregate(Avg('price'))['price__avg']
+    most_popular_brand = Cars.objects.values('car_name').annotate(count=Count('id')).order_by('-count')[0]['car_name']
+    total_cars_sold = Cars.objects.count()
+
+    context = {
+        'total_sales': total_sales,
+        'average_price': round(average_price, 2),
+        'most_popular_brand': most_popular_brand,
+        'total_cars_sold': total_cars_sold
+    }
+    return render(request, 'evaluate/statistics.html', context)

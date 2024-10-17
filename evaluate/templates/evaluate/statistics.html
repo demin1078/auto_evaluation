@@ -1,0 +1,28 @@
+{% extends 'evaluate/base.html' %}
+{% load static %}
+
+{% block title %}Sales Statistics{% endblock %}
+
+{% block content %}
+<h1>Sales Statistics</h1>
+
+<h2>Summary</h2>
+<ul>
+    <li><strong>Total Sales:</strong> {{ total_sales }}</li>
+    <li><strong>Average Price:</strong> ${{ average_price }}</li>
+    <li><strong>Most Popular Brand:</strong> {{ most_popular_brand }}</li>
+    <li><strong>Total Cars Sold:</strong> {{ total_cars_sold }}</li>
+</ul>
+
+<h2>Sales Graphs</h2>
+<div class="graphs">
+    <div>
+        <h3>Monthly Sales</h3>
+        <img src="{% static 'evaluate/monthly_sales.png' %}" alt="Monthly Sales Graph">
+    </div>
+    <div>
+        <h3>Brand Distribution</h3>
+        <img src="{% static 'evaluate/brand_distribution.png' %}" alt="Brand Distribution Graph">
+    </div>
+</div>
+{% endblock %}
