@@ -8,12 +8,14 @@
 <div class="card-container">
     {% for car in cars %}
         <div class="card">
-            <img src="{{ car.photo_url }}" alt="{{ car.car_name }}">
-            <div class="card-content">
-                <h2>{{ car.title }}</h2>
-                <p><strong>Car Name:</strong> {{ car.car_name }}</p>
-                <p><strong>Price:</strong> ${{ car.price }}</p>
-            </div>
+            <a href="{{ car.get_absolute_url }}">
+                <img src="{{ car.photo_url }}" alt="{{ car.car_name }}">
+                <div class="card-content">
+                    <h2>{{ car.title }}</h2>
+                    <p><strong>Car Name:</strong> {{ car.car_name }}</p>
+                    <p><strong>Price:</strong> ${{ car.price }}</p>
+                </div>
+            </a>
         </div>
     {% endfor %}
 </div>

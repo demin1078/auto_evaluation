@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import TodoItem, Cars
 import random
 
@@ -24,3 +24,19 @@ def database(request):
 
 def about(request):
     return render(request, 'evaluate/about.html')
+
+
+
+def car_detail(request, pk):
+    car = get_object_or_404(Cars, pk=pk)
+    context = {
+        'car': car,
+        'car_characteristics': {
+            'Title': car.title,
+            'Car Name': car.car_name,
+            'Price': car.price,
+            # добавьте другие характеристики автомобиля здесь
+        },
+        'estimated_price': '---',  # это можно заменить реальной логикой оценки
+    }
+    return render(request, 'evaluate/car_detail.html', context)

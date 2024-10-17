@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 
@@ -21,4 +22,7 @@ class Cars(models.Model):
 
     mileage = models.FloatField( null=True)
     price = models.FloatField( null=True)
+
+    def get_absolute_url(self):
+        return reverse('car_detail', args=[str(self.id)])
 
