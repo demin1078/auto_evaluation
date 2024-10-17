@@ -26,7 +26,6 @@ def about(request):
     return render(request, 'evaluate/about.html')
 
 
-
 def car_detail(request, pk):
     car = get_object_or_404(Cars, pk=pk)
     context = {
@@ -34,6 +33,9 @@ def car_detail(request, pk):
         'car_characteristics': {
             'Title': car.title,
             'Car Name': car.car_name,
+            'Color': car.color,
+            'mileage': car.mileage,
+            'описание':car.short_description,
             'Price': car.price,
             # добавьте другие характеристики автомобиля здесь
         },
