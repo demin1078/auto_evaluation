@@ -15,10 +15,6 @@
                 <li><strong>{{ key }}:</strong> {{ value }}</li>
             {% endfor %}
         </ul>
-        <form method="post">
-            {% csrf_token %}
-            <button type="submit">Estimate Car</button>
-        </form>
         <p><strong>Estimated Car Price:</strong> {{ estimated_price }}</p>
     </div>
 </div>

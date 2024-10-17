@@ -1,0 +1,12 @@
+{% extends 'evaluate/base.html' %}
+
+{% block title %}Significant Changes{% endblock %}
+
+{% block content %}
+<h1>Significant Changes in the Auto Market</h1>
+<div class="changes-container">
+    {% for change in changes %}
+        <p>{{ change }}</p>
+    {% endfor %}
+</div>
+{% endblock %}
